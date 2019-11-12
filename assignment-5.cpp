@@ -10,8 +10,10 @@
 
 main() {
     // variables
-    int value_1;
-    int power_number;
+    std::string value_1;
+    std::string power_number;
+    int int_value_1;
+    int int_power_number;
     int loopsum = 1;
     int loopcounter = 0;
 
@@ -23,11 +25,13 @@ main() {
 
     // process and output
     try {
-        while (loopcounter < power_number) {
-            loopsum = loopsum * value_1;
+        int_power_number = std::stoi(power_number);
+        int_value_1 = std::stoi(value_1);
+        while (loopcounter < int_power_number) {
+            loopsum = loopsum * int_value_1;
             loopcounter = loopcounter + 1;
         }
-        std::cout << value_1 << " to the power of " << power_number <<
+        std::cout << int_value_1 << " to the power of " << int_power_number <<
         " = " << loopsum << std::endl;
     } catch (std::invalid_argument) {
     std::cout << "Please input only valid integers";
